@@ -1,0 +1,61 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body style="margin-left:auto;margin-right:auto;text-align:center">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand navbar-expand-xl" href="#">仓储管理系统</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a asp-controller="Products" asp-action="Index">产品管理</a></li>
+
+                <li><a asp-controller="Locations" asp-action="Index">仓库管理</a></li>
+                <li><a asp-controller="Users" asp-action="Index">用户管理</a></li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" style="color:brown" data-toggle="dropdown">
+                        @ViewData["用户名"]<span class="caret"></span>
+                    </a>
+               <ul class="dropdown-menu">
+            <li><a asp-controller="Home" asp-action="logout">退出</a></li>
+           
+        </ul>
+                <li><a id="time">@DateTime.Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script type="text/javascript">
+        function updateClock() {
+            var now = new Date(), // current date
+                months = [1, 2,3,4,5,6,7,8,9,10,11,12]; 
+            time = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds(), 
+
+                date = [now.getDate(),
+                months[now.getMonth()],
+                now.getFullYear()].join('/');
+
+            // set the content of the element with the ID time to the formatted string
+            document.getElementById('time').innerHTML = [date, time].join(' ');
+
+            // call this function again in 1000ms
+            setTimeout(updateClock, 1000);
+        }
+        updateClock(); // initial call
+    </script>
+    @RenderBody()
+
+    <footer class="card-footer">
+    </footer>
+</body>
+
+</html>

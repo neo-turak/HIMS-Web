@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "仓储管理系统";
+    Layout = null;
+    String 结果=(String)ViewData["结果"];
+}
+
+<link rel="stylesheet" href="~/css/Login.css" />
+<link rel="icon" href="~/app_icon.png" />
+
+
+    <div class="login">
+        <h1>仓储  管  理  系  统</h1>
+        <h2 class="text-center" style="font-size:20px;text-align:center;color:chartreuse;font-weight:700">登  录</h2>
+        <form method="post">
+            <input type="text" for="id" name="id" placeholder="用户名" required="required"/>
+            <input type="password" for="pwd" name="pwd" placeholder="密码" required="required" />
+            <button type="submit" class="btn btn-primary btn-block btn-large" asp-action="Usercheck" asp-controller="Login">登  录</button>
+            <h2 for="结果" class="text-center" style="font-size:16px;text-align:center;color:red;font-weight:700;padding-top:2em;">@结果</h2>
+        </form>
+    </div>
+

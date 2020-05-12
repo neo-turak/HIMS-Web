@@ -1,0 +1,51 @@
+﻿@model HIMS_Web.Models.Products
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>新 增</h1>
+
+<h4>产品清单</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" style="width:50%;margin:0 auto;" class="form-control" value="苹果X" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type" class="control-label"></label>
+                <input asp-for="Type" style="width:50%;margin:0 auto;" class="form-control"  value="手机"/>
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" style="width:50%;margin:0 auto;" class="form-control" value="1号库" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" style="width:50%;margin:0 auto;" class="form-control" value="3700" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Owner" class="control-label"></label>
+                <input asp-for="Owner"  name="Owner" style="width:50%;margin:0 auto;" value="努尔江" class="form-control" />
+                <span asp-validation-for="Owner" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" style="margin-top:10px" value="添  加" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">返回主页</a>
+</div>
+

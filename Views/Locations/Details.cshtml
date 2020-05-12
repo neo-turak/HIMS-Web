@@ -1,0 +1,35 @@
+﻿@model HIMS_Web.Models.Locations
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>详 情</h1>
+
+<div>
+    <hr />
+    <dl style="align-content:center;text-align:center;width:80%;margin:0 auto;" class="row">
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.Owner)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.Owner)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">编 辑</a> |
+    <a asp-action="Index">返回</a>
+</div>
